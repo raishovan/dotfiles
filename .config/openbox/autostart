@@ -1,0 +1,13 @@
+
+# tint2 &
+nitrogen --restore &
+NetworkManager $
+sleep 10 && xrandr --auto --output HDMI1 --mode 1920x1080 --left-of eDP1 &
+# mmaker -vf OpenBox3 termite $
+sleep 10 && conky -c ~/.config/conky/conky.conf &
+sleep 15 && conky -c ~/.config/conky/conky1.conf &
+sleep 20 && conky -c ~/.config/conky/conky2.conf &  
+sleep 10 && journalctl -f >> ~/.config/conky/logs.txt &
+
+
+

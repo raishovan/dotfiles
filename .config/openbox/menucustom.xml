@@ -1,0 +1,142 @@
+<?xml version='1.0' encoding='utf-8'?>
+<openbox_menu>
+  <menu id="root-menu" label="OpenBox 3">
+    <menu id="menu-1191411" label="Shovan" icon="/home/shovanrai/Downloads/wallpaper/XFUKTh.png">
+      <item label="Firefox">
+        <action name="Execute">
+          <execute>firefox</execute>
+        </action>
+      </item>
+      <item label="Terminal">
+        <action name="Execute">
+          <execute>termite</execute>
+        </action>
+      </item>
+      <item label="Screenshot">
+        <action name="Execute">
+          <execute>gnome-screenshot --interactive</execute>
+        </action>
+      </item>
+      <item label="Images">
+        <action name="Execute">
+          <execute>nomacs</execute>
+        </action>
+      </item>
+      <item label="Geany">
+        <action name="Execute">
+          <execute>geany</execute>
+        </action>
+      </item>
+      <item label="File">
+        <action name="Execute">
+          <execute>pcmanfm</execute>
+        </action>
+      </item>
+      <item label="Nitrogen">
+        <action name="Execute">
+          <execute>nitrogen</execute>
+        </action>
+      </item>
+      <item label="Zim">
+        <action name="Execute">
+          <execute>zim</execute>
+        </action>
+      </item>
+      <item label="Network Manager">
+        <action name="Execute">
+          <execute>nm-connection-edotor</execute>
+        </action>
+      </item>
+      <item label="Tint2">
+        <action name="Execute">
+          <execute>tint2</execute>
+        </action>
+      </item>
+      <item label="Vlc">
+        <action name="Execute">
+          <execute>vlc</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="1" label="Development">
+      <item label="IDLE (Python IDE)">
+        <action name="Execute">
+          <execute>idle</execute>
+        </action>
+      </item>
+      <item label="Python">
+        <action name="Execute">
+          <execute>xterm -e python</execute>
+        </action>
+      </item>
+      <item label="Python (v2.7)">
+        <action name="Execute">
+          <execute>xterm -e python2.7</execute>
+        </action>
+      </item>
+    </menu>
+    <menu id="37" label="System">
+      <item label="Lx ppearance">
+        <action name="Execute">
+          <execute>lxappearance</execute>
+        </action>
+      </item>
+      <item label="Desktop Preference">
+        <action name="Execute">
+          <execute>pcmanfm--desktop-pref</execute>
+        </action>
+      </item>
+      <item label="Nitrogen">
+        <action name="Execute">
+          <execute>nitrogen</execute>
+        </action>
+      </item>
+      <item label="OpenBox configuration">
+        <action name="Execute">
+          <execute>obconf</execute>
+        </action>
+      </item>
+      <item label="OpenBox menu">
+        <action name="Execute">
+          <execute>obmenu</execute>
+        </action>
+      </item>
+      <item label="Prefered setting">
+        <action name="Execute">
+          <execute>libfm-pref-apps</execute>
+        </action>
+      </item>
+      <item label="Openbox Menu Editor">
+        <action name="Execute">
+          <execute>obmenu</execute>
+        </action>
+      </item>
+      <item label="Tint2 Setting">
+        <action name="Execute">
+          <execute>tint2conf</execute>
+        </action>
+      </item>
+      <item label="Conky manager">
+        <action name="Execute">
+          <execute>conky-manager</execute>
+        </action>
+      </item>
+      <item label="Xarchiver">
+        <action name="Execute">
+          <execute>xarchiver</execute>
+        </action>
+      </item>
+    </menu>
+    <separator />
+    <menu id="40" label="OpenBox">
+      <menu id="client-list-menu" />
+      <item label="Reconfigure">
+        <action name="Reconfigure" />
+      </item>
+      <separator />
+      <item label="Exit">
+        <action name="Exit" />
+      </item>
+    </menu>
+  </menu>
+</openbox_menu>

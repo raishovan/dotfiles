@@ -1,0 +1,38 @@
+command=~/.config/i3blocks/$BLOCK_NAME
+seperator_block_width=15
+markup=pango
+
+
+
+[ip]
+command=hostname -i | awk '{print $1}'
+interval=once
+color=#F0A0014
+
+[public-ip]
+command=wget -qO - icanhazip.com
+interval=once
+color=#FFFF00
+
+[memory]
+command=./i3mem
+interval=30
+
+[cpu]
+command=./i3cpu
+interval=30
+
+[time]
+command=./date
+interval=1
+
+#[weather]
+#command=curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+#interval=3600
+#color=#A4C2F4
+
+[weather]
+command=./weather
+interval=1800
+color=#A4C2F4
+

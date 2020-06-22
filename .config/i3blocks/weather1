@@ -1,0 +1,8 @@
+#!/bin/bash
+
+[[ $BLOCK_BUTTON = "1"]] && st -e w3m wttr.in
+
+curl https://wttr.in > ~/.weatherreport
+
+echo -n $(cat ~/.weatherreport | sed -n 16p | sed -e 's/^[[^m]*m//g' | grep -o "[0-9]*% | sort -n | sed -e '$!d")
+  

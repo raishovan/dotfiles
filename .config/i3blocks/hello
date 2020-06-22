@@ -1,0 +1,5 @@
+#!/bin/bash
+
+MEM=$(ps axch -o cmd:15,%mem --sort=-%mem | head -1)
+notify-send "USAGE:" "$MEM"
+echo -n "$MEM"| xclip -i -selection clipboard 1>/dev/null 2>&1

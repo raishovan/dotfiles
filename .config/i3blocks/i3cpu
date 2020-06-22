@@ -1,0 +1,7 @@
+#!/bin/bash
+case $BLOCK_BUTTON in
+  1) notify-send "$(ps axch -o cmd:10,%cpu --sort=-%cpu | head -15)" ;;
+
+esac
+
+sensors | awk '/^temp1/ {print $2}'	

@@ -1,0 +1,9 @@
+#!/bin/bash
+
+case $BLOCK_BUTTON in
+  1) notify-send "$(curl https://wttr.in?0&T&Q)" ;;
+
+esac
+
+curl -Ss 'https://wttr.in?0&T&Q' | cut -c 16- | head -2 | xargs echo
+

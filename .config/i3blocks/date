@@ -1,0 +1,9 @@
+#! /bin/bash
+
+WIDTH=${WIDTH:-200}
+HEIGHT=${HEIGHT:-200}
+DATEFMT=${DATEFMT:-"+%a %d.%m.%Y %H:%M:%S"}
+SHORTFMT=${SHORTFMT:-"+%H:%M:%S"}
+
+echo "$LABEL$(date "$DATEFMT")"
+#echo "$LABEL$(date "$SHORTFMT")"

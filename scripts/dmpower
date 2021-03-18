@@ -1,0 +1,37 @@
+ 
+#!/usr/bin/env bash
+# Repository : https://github.com/okraits/rofi-tools/blob/master/rofi-power
+
+# rofi-power
+# Use rofi to call systemctl for shutdown, reboot, etc
+
+# 2016 Oliver Kraitschy - http://okraits.de
+
+OPTIONS="Suspend\nReboot\nPoweroff\nHibernate"
+
+# source configuration or use default values
+USE_LOCKER="true"
+LOCKER="slimlock"
+
+option=`echo -e $OPTIONS | dmenu -l 4 -p Session| awk '{print $1}' | tr -d '\r\n'`
+if [ ${#option} -gt 0 ]
+then
+    case $option in
+        Reboot)
+            systemctl reboot
+            ;;
+        Poweroff)
+            systemctl poweroff
+            ;;
+        Suspend)
+            # $($USE_LOCKER) && "$LOCKER"; systemctl suspend
+            systemctl suspend
+            ;;
+        Hibernate)
+            # $($USE_LOCKER) && "$LOCKER"; systemctl hibernate
+            systemctl hibernate
+            ;;
+        *)
+            ;;
+    esac
+fi

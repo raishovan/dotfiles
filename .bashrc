@@ -7,7 +7,8 @@
 alias config='/usr/bin/git --git-dir=$HOME/.myconf/ --work-tree=$HOME'
 alias msfconsole="msfconsole --quiet -x \"db_connect shovanrai@msf\""
 alias graph='git log --decorate --all --graph'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
+alias ls='exa'
 PS1='[\u@\h \W]\$ '
 alias logout='pkill -KILL -U shovanrai'
 powerline-daemon -q

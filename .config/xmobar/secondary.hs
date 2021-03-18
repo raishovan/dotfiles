@@ -16,7 +16,7 @@ Config {
         Run Memory ["-t", "  <used>M (<usedratio>%)"] 150,
         Run Com "bash" ["-c", "checkupdates | wc -l"] "updates" 3000,
 -- not working
--- Run MPD ["-t", "<state>: <artist> - <track>"] 10,
+--	Run MPD ["-t", "<state>: <artist> - <track>"] 10,
 	Run Weather "VNKT" ["-t","<station>: <tempC>C",
                                         "-L","18","-H","25",
                                         "--normal","green",

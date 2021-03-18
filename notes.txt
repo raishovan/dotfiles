@@ -1,0 +1,32 @@
+---------------- SCRATCHPADS AND DMENU SCRIPTS --------------
+
+M-v    # notes
+M-c    # console
+M-e    # config
+M-s    # search Internet
+M-a    # htop
+M-z    # ranger
+
+------------------------- SOUND --------------------------
+
+M-n    # quimup /ncmpcpp
+M-C-p  # mpc play
+M-S-p  # mpc pause
+M-C-]  # mpc next
+M-C-[  # mpc prev
+M-C-0  # volume plus
+M-C-9  # volume minus
+M-C-8  # volume mute
+
+--------------------- NEW INSTALLS ---------------------
+
+exa    		# written in rust / replacement to ls
+bat    		# written in rust / replacement to cat
+rg    	 	# written in rust / rg <str to find> <file>
+fd    		# written in rust / fd <str to find> <dir/current>
+procs 		# written in rust / procs name_of_appexa 
+bat  	 	# written in rust / replacement to cat
+rg     		# written in rust / rg <str to find> <file>
+fd     		# written in rust / fd <str to find> <dir/current>
+procs  		# written in rust / procs name_of_app
+fbreader      	# ebook reader 

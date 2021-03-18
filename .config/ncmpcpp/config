@@ -1,0 +1,16 @@
+ncmpcpp_directory = ~/.config/ncmpcpp
+##### connection settings #####
+
+mpd_host = localhost
+
+mpd_port = 6600
+#
+mpd_connection_timeout = 5
+#
+## Needed for tag editor and file operations to work.
+##
+mpd_music_dir = "~/music/"
+#
+mpd_crossfade_time = 5
+
+execute_on_song_change = notify-send "Now Playing" "$(mpc --format '%title% \n%artist% - %album%' current)"

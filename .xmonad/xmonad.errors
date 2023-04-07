@@ -1,7 +1,0 @@
-
-xmonad.hs:317:1: warning: [-Wtabs]
-    Tab character found here.
-    Please use spaces instead.
-    |
-317 |          NS "ranger" "termite -e ranger" (title =? "ranger") (customFloating $ W.RationalRect (1/9) (1/9) (4/5) (4/5)),
-    | ^^^^^^^^

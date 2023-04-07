@@ -1,70 +1,79 @@
-	set encoding=utf-8
 call plug#begin()
-Plug 'preservim/NERDTree'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-Plug 'dense-analysis/ale'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'joshdick/onedark.vim'
-Plug 'vim-syntastic/syntastic'
-Plug 'nvie/vim-flake8'
-Plug 'kien/ctrlp.vim'
-Plug 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
-Plug 'xolox/vim-misc'
-Plug 'xolox/vim-session'
-Plug 'majutsushi/tagbar'                  " Class/module browser
+
+" GRUVBOX
+Plug 'morhetz/gruvbox'
+
+" WHICH-KEY
+" Plug 'liuchengxu/vim-which-key'
+
+" RANGER
+Plug 'kevinhwang91/rnvimr'
+
+" FZF
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+"
+" " UTILS
+"Plug 'tpope/vim-commentary'
+"Plug 'jiangmiao/auto-pairs'
+"Plug 'prettier/vim-prettier'
+
+" LSP
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'sheerun/vim-polyglot'
 call plug#end()
 
-" Sytastic Settings
-let g:syntastic_python_checkers = ["flake8"]
-let g:syntastic_flake8_max_line_length="160"
+" GRUVBOX
+autocmd vimenter * ++nested colorscheme gruvbox
 
-"pretty code
-let python_highlight_all=1
-syntax on
-
-"PEP-8 Indentation
-au BufNewFile,BufRead *.py
-    \ set tabstop=4 |
-    \ set softtabstop=4 |
-    \ set shiftwidth=4 |
-    \ set textwidth=79 |
-    \ set expandtab |
-    \ set autoindent |
-    \ set fileformat=unix
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-set incsearch
-set scrolloff=8
+" FZF
+let g:fzf_preview_window = ['right,50%', 'ctrl-/']
+let g:fzf_preview_window = ['hidden,right,50%,<70(up,40%)', 'ctrl-/']
+let g:fzf_preview_window = []
+let $FZF_DEFAULT_COMMAND='find . \( -name node_modules -o -name .git -o -name .next \) -prune -o -print'
+let $FZF_DEFAULT_OPTS="--bind \"ctrl-d:preview-down,ctrl-u:preview-up\""
+let g:fzf_buffers_jump = 1
+let g:fzf_commits_log_options = '--graph --color=always'
+let g:fzf_tags_command = 'ctags -R'
+nnoremap <space>fb :Buffers<CR>
+nnoremap <C-g> :GFiles!?<CR>
+nnoremap <Leader>f :Rg!<space>
+command! -bang -nargs=? -complete=dir Files
+    \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+" COC
+set encoding=utf-8
+set nobackup
+set nowritebackup
+set updatetime=300
 set signcolumn=yes
+inoremap <silent><expr> <TAB>
+      \ coc#pum#visible() ? coc#pum#next(1) :
+      \ CheckBackspace() ? "\<Tab>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
+                              \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
-nmap <space> za
-nmap <F2> :NERDTreeToggle<CR>
-nmap <F3> :NERDTreeFind<CR>
-:nnoremap <F5> :buffers<CR>:buffer<Space>
-"set number
-:set number relativenumber
+" SETS
+set nobackup
+set nowritebackup
+set updatetime=300
+set signcolumn=yes
+set number
+set relativenumber
+set ignorecase
+set smartcase
+set nowrap
+set mouse=
+set expandtab
+set clipboard=unnamedplus
+set background=dark
 
-"clipboard
-vnoremap <C-y> "+y
-map <C-p> "+p
-:augroup numbertoggle
-:  autocmd!
-:  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-:  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-:augroup END
-set mouse=a
-"mouse support for alacritty
-set ttymouse=sgr
+" REMAP
+inoremap jk <Esc>
+inoremap kj <Esc>
+let mapleader = ","
+nnoremap <silent> <space>z :RnvimrToggle<CR>
+nnoremap <C-p> "*p
+vnoremap <C-y> "*y
 
-
-"=====================================================
-""" TagBar settings
-""=====================================================
-let g:tagbar_autofocus=0
-let g:tagbar_width=42
-autocmd BufEnter *.py :call tagbar#autoopen(0)
-
-:let g:session_autoload = 'no'
